@@ -2,3 +2,34 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+.numero{
+  height: 30%;
+  border-style: solid;
+  border-color: black;
+  background-image: url("../../assets/icon/numeros.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.animal{
+  height: 30%;
+  border-style: solid;
+  border-color: black;
+  background-image: url("../../assets/icon/animales.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.color{
+  height: 30%;
+  border-style: solid;
+  border-color: black;
+  background-image: url("../../assets/icon/colores.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
