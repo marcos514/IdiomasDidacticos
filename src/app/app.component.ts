@@ -17,9 +17,18 @@ export class AppComponent {
   titulo = 'Tabla Didactica';
   idioma='../assets/icon/frances.png';
   idiomas=[
-    '../assets/icon/frances.png',
-    '../assets/icon/inglaterra.png',
-    '../assets/icon/argentina.jpg'
+    {
+      'foto':'../assets/icon/frances.png',
+      'idioma':'frances'
+    },
+    {
+      'foto':'../assets/icon/inglaterra.png',
+      'idioma':'ingles'
+    },
+    {
+      'foto':'../assets/icon/argentina.jpg',
+      'idioma':'argentino'
+    }
   ]
 
   selectIdioma=0;
@@ -39,8 +48,10 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       timer(3000).subscribe(()=>{this.showSplash=false;})
-  });
+    });
+    localStorage.setItem('idioma','frances')
   }
+  
 
   LogOut(){
     this.AFauth.logOut();
@@ -50,8 +61,8 @@ export class AppComponent {
   cambiarIdioma(){
     this.selectIdioma += 1;
     if(this.selectIdioma > 2)
-      this.selectIdioma = 0
-    this.idioma = this.idiomas[this.selectIdioma]
-
+      this.selectIdioma = 0;
+    this.idioma = this.idiomas[this.selectIdioma].foto;
+    localStorage.setItem('idioma', this.idiomas[this.selectIdioma].idioma);
   }
 }

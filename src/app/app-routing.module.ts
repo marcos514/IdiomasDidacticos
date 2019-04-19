@@ -18,7 +18,10 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
-  { path: 'log-in', loadChildren: './log-in/log-in.module#LogInPageModule', canActivate: [NoGuardGuard] }
+  { path: 'log-in', loadChildren: './log-in/log-in.module#LogInPageModule', canActivate: [NoGuardGuard] },
+  { path: 'colores', loadChildren: './page/colores/colores.module#ColoresPageModule' },
+  { path: 'animales', loadChildren: './page/animales/animales.module#AnimalesPageModule' },
+  { path: 'numeros', loadChildren: './page/numeros/numeros.module#NumerosPageModule' }
 ];
 
 @NgModule({
