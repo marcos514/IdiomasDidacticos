@@ -28,7 +28,7 @@
   }
   .home{
     height: 100%;
-    width: 33.33%;
+    width: 33%;
     border-style: solid;
     border-color: black;
     background-image: url("../../assets/icon/homebase.png");
@@ -43,7 +43,7 @@
 
 @media only screen and (max-width: 450px) {
   .numero{
-    height: 85%;
+    height: 100%;
     background-image: url("../../assets/icon/numeros.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -67,7 +67,7 @@
     background-size: cover;
   }
   .home{
-    height: 33%;
+    height: 30%;
     border-style: solid;
     border-color: black;
     background-image: url("../../assets/icon/homebase.png");

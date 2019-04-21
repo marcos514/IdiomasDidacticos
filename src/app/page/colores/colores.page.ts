@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SmartAudioService } from 'src/app/smart-audio.service';
 
 @Component({
   selector: 'app-colores',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColoresPage implements OnInit {
 
-  constructor() { }
-
+  color=0;
+  constructor(private publicRouter:Router,private nativeAudio: SmartAudioService) { }
   ngOnInit() {
   }
+  Home(){
+    this.publicRouter.navigate(['/home']);
+  }
 
+  Seleccionar(color){
+    this.color=color;
+  }
+
+  Escuchar(){
+    let idioma = localStorage.getItem('idioma');
+    this.nativeAudio.play(idioma, this.color, "colores");
+
+  }
 }

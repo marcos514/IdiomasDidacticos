@@ -14,7 +14,8 @@ import { fireBaseConfig } from '../environments/environment'
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
-
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { SmartAudioService } from "./smart-audio.service"
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -31,7 +32,9 @@ import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/fi
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: FirestoreSettingsToken, useValue:{}}
+    { provide: FirestoreSettingsToken, useValue:{}},
+    NativeAudio,
+    SmartAudioService
   ],
   bootstrap: [AppComponent]
 })

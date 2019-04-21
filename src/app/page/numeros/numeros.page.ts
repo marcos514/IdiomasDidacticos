@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NumerosPageModule } from './numeros.module';
+import { SmartAudioService } from 'src/app/smart-audio.service';
 
 @Component({
   selector: 'app-numeros',
@@ -9,7 +10,7 @@ import { NumerosPageModule } from './numeros.module';
 })
 export class NumerosPage implements OnInit {
   numero=0;
-  constructor(private publicRouter:Router) { }
+  constructor(private publicRouter:Router,private nativeAudio: SmartAudioService) { }
   ngOnInit() {
   }
   Home(){
@@ -18,5 +19,11 @@ export class NumerosPage implements OnInit {
 
   Seleccionar(numero){
     this.numero=numero;
+  }
+
+  Escuchar(){
+    let idioma = localStorage.getItem('idioma');
+    this.nativeAudio.play(idioma, this.numero, "numeros");
+
   }
 }
