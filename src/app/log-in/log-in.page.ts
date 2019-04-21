@@ -27,5 +27,10 @@ export class LogInPage implements OnInit {
     }).catch(err => alert('Reingresar Datos'));
   }
 
+  Rellenar(usr, password){
+    this.email=usr+"@gmail.com";
+    this.password = password;
+  }
+
 }
 
